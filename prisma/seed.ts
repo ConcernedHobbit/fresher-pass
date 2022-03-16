@@ -36,7 +36,6 @@ async function seed() {
 // Wish we had top-level await...
 // Promises will have to do.
 seed()
-  .then(() => console.log(`Finished seeding. Exiting...`))
   .catch((e: unknown) => {
     console.error(e)
     process.exit(1)
