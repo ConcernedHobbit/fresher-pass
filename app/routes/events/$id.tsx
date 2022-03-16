@@ -1,12 +1,11 @@
-import { PassEvent, PrismaClient } from "@prisma/client";
-import { json, LoaderFunction, useCatch, useLoaderData, useParams } from "remix";
+import { PassEvent } from "@prisma/client";
+import { json, LoaderFunction, useCatch, useLoaderData } from "remix";
 import Event from "~/components/Event";
+import { db } from "~/util/db.server";
 
 export const loader: LoaderFunction = async ({
   params
 }) => {
-  const db = new PrismaClient();
-
   if (params.id === undefined) {
     throw new Response(
       'No id provided as parameter', 
@@ -19,12 +18,12 @@ export const loader: LoaderFunction = async ({
     throw new Response(
       'Invalid ID',
       { status: 400 }
-    )
+    );
   }
 
   const event = await db.passEvent.findUnique({
     where: { id: eventId }
-  })
+  });
 
   if (!event) {
     throw new Response(
@@ -32,8 +31,6 @@ export const loader: LoaderFunction = async ({
       { status: 404 }
     );
   }
-
-  db.$disconnect();
 
   return json(event);
 }
@@ -43,7 +40,7 @@ export default function SingleEvent() {
 
   return (
     <div>
-      <Event event={data} />
+      <Event event={data} link={false} />
     </div>
   )
 }
