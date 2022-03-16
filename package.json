@@ -11,8 +11,7 @@
     "start": "cross-env NODE_ENV=production remix-serve build",
     "lint": "eslint app",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
-    "test": "echo 'no tests'"
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "@remix-run/react": "^1.2.3",
