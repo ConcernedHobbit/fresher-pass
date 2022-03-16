@@ -2,7 +2,7 @@ import { PrismaClient, Prisma } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const events: Prisma.EventCreateInput[] = [
+const events: Prisma.PassEventCreateInput[] = [
   { title: "Fresher year head start" },
   { title: "KJYR 2027" },
   { title: "Fresher sitz" },
@@ -25,7 +25,7 @@ async function seed() {
   });
 
   events.forEach(async (seedEvent) => {
-    const event = await prisma.event.create({
+    const event = await prisma.passEvent.create({
       data: seedEvent
     });
 
