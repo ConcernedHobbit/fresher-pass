@@ -48,4 +48,6 @@ Building and running the application in production mode is simple:
 
 This is a course project for the [Full Stack Open](https://fullstackopen.com/en) course.
 
+Hour tracking can be found [here](https://github.com/ConcernedHobbit/fresher-pass/blob/main/docs/HOURS.md).
+
 *More FSO-specific documentation will be added at a later date.*
