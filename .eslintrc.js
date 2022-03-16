@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["@remix-run/eslint-config"],
+  extends: ["eslint:recommended", "@remix-run/eslint-config"],
   ignorePatterns: [
     "/build/",
     "/public/"
