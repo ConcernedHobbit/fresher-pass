@@ -38,11 +38,7 @@ export const loader: LoaderFunction = async ({
 export default function SingleEvent() {
   const data = useLoaderData<PassEvent>();
 
-  return (
-    <div>
-      <Event event={data} link={false} />
-    </div>
-  )
+  return <Event event={data} link={false} />;
 }
 
 export function CatchBoundary() {
@@ -50,13 +46,9 @@ export function CatchBoundary() {
 
   switch (error.status) {
     case 404:
-      return (
-        <div>There's no such event!</div>
-      );
+      return <p>There's no such event!</p>;
     
     default:
-      return (
-        <div>{error.status} {error.data}</div>
-      )
+      return <p>{error.status} {error.data}</p>;
   }
 }

@@ -15,8 +15,8 @@ export default function Events() {
   const data = useLoaderData<Array<PassEvent>>();
 
   return (
-    <div>
+    <>
       {data.map(event => <Event key={event.id} event={event} />)}
-    </div>
+    </>
   )
 }
