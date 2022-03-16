@@ -19,7 +19,12 @@ Current features to be implemented can be found in [TODO](https://github.com/Con
   npm install
 ```
 
-3. Initialize the database
+3. Create .env file
+```bash
+  cp .env.template .env
+```
+
+4. Initialize the database
 ```bash
   npx prisma migrate dev --name initialization
 ```
