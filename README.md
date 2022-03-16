@@ -1,53 +1,13 @@
-# Welcome to Remix!
+# Fresher Pass
 
-- [Remix Docs](https://remix.run/docs)
+A hopeless attempt at making yet another future-proof:tm: fresher pass with modern technology.
 
-## Development
+Aims to be usable on mobile through "Add to home screen" or similar functionality, as well as on desktop.
 
-From your terminal:
+Current features to be implemented can be found in [TODO](https://github.com/ConcernedHobbit/fresher-pass/blob/main/docs/TODO.md).
 
-```sh
-npm run dev
-```
+## Full Stack Open
 
-This starts your app in development mode, rebuilding assets on file changes.
+This is a course project for the [Full Stack Open](https://fullstackopen.com/en) course.
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+*More FSO-specific documentation will be added at a later date.*
