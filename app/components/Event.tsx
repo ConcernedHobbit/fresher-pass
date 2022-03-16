@@ -1,9 +1,16 @@
 import { PassEvent } from "@prisma/client";
+import { Link } from "remix";
 
-export default function Event({ event }: { event: PassEvent }): JSX.Element {
+export default function Event(
+  { event, link = true }: 
+  { event: PassEvent, link?: boolean }
+): JSX.Element {
   return (
     <div>
-      <p>{event.title} #<em>{event.id}</em></p>
+      { link 
+        ? <Link to={`/events/${event.id}`}>{event.title}</Link> 
+        : <p>{event.title}</p> 
+      }
     </div>
   )
 }
