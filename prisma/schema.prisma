@@ -11,15 +11,21 @@ datasource db {
 }
 
 model PassEvent {
-  id        Int       @id @default(autoincrement())
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @default(now())
-  title     String
+  id          Int       @id @default(autoincrement())
+  created     DateTime  @default(now())
+  updated     DateTime  @default(now())
+  title       String
+  description String?
+  start       DateTime?
+  end         DateTime?
+  place       String?
 }
 
 model User {
   id        Int       @id @default(autoincrement())
-  createdAt DateTime  @default(now())
+  created   DateTime  @default(now())
+  updated   DateTime  @default(now())
+  verified  Boolean   @default(false)
   username  String
-  name      String
+  name      String?
 }
