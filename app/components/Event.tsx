@@ -7,10 +7,14 @@ export default function Event(
 ): JSX.Element {
   return (
     <div>
-      { link 
-        ? <Link to={`/events/${event.id}`}>{event.title}</Link> 
-        : <p>{event.title}</p> 
-      }
+      <p>
+        { link 
+          ? <Link to={`/events/${event.id}`}>{event.title}</Link> 
+          : event.title
+        }
+      </p>
+      {event.place && <em>{event.place}</em>}
+      {event.description && <p>{event.description}</p>}
     </div>
   )
 }
