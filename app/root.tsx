@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import Navigation from "./components/Navigation";
 
 export const meta: MetaFunction = () => {
   return { 
@@ -25,6 +26,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Navigation />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
