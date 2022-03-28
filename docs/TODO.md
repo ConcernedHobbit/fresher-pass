@@ -18,9 +18,9 @@
   - [x] From API
   - [x] From UI
 ### Metadata
-- [ ] Event can have description
-- [ ] Event can have a time and date
-- [ ] Event can have a place
+- [x] Event can have description
+- [x] Event can have a time and date
+- [x] Event can have a place
 ### Interfacing
 - [ ] Events from TKO-äly's calendar can be listed
 - [ ] Events can be added based on TKO-äly's calendar event
