@@ -1,7 +1,7 @@
 import { PassEvent } from "@prisma/client";
 import { json, LoaderFunction, useCatch, useLoaderData } from "remix";
 import Event from "~/components/Event";
-import { db } from "~/util/db.server";
+import { getById } from "~/services/eventService.server";
 
 export const loader: LoaderFunction = async ({
   params
@@ -21,9 +21,7 @@ export const loader: LoaderFunction = async ({
     );
   }
 
-  const event = await db.passEvent.findUnique({
-    where: { id: eventId }
-  });
+  const event = await getById(eventId)
 
   if (!event) {
     throw new Response(

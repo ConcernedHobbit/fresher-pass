@@ -1,13 +1,10 @@
 import { PassEvent } from "@prisma/client";
 import { json, LoaderFunction, useLoaderData } from "remix";
 import Event from "~/components/Event";
-import { db } from "~/util/db.server";
+import { getEvents } from "~/services/eventService.server";
 
 export const loader: LoaderFunction = async () => {
-  const events = await db.passEvent.findMany({
-    take: 10 
-  });
-
+  const events = await getEvents();
   return json(events);
 }
 
