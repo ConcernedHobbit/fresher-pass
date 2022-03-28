@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { db } from "~/util/db.server";
 
 export const getEvents = async (amount?: number) =>
@@ -8,7 +9,7 @@ export const getById = async (id: number) =>
     where: { id }
   })
 
-export const createEvent = async (title: string) =>
+export const createEvent = async (event: Prisma.PassEventCreateInput) =>
   await db.passEvent.create({
-    data: { title }
+    data: event
   })

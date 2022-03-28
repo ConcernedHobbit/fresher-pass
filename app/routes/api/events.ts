@@ -1,10 +1,9 @@
-import { ActionFunction, json, LoaderFunction } from "remix";
-import { createEvent, getEvents } from "~/services/eventService.server";
+import { ActionFunction, json } from "remix";
+import { createEvent } from "~/services/eventService.server";
 
-export const loader: LoaderFunction = async () => {
-  const events = await getEvents()
-  return json(events)
-}
+// Reused UI loader
+import { loader as eventsLoader } from "~/routes/events/index"
+export const loader = eventsLoader
 
 export const action: ActionFunction = async ({
   request
@@ -19,7 +18,9 @@ export const action: ActionFunction = async ({
       }, 400)
     }
 
-    const event = await createEvent(title)
+    const event = await createEvent({
+      title
+    })
     return json(event)
   } catch (error) {
     return json({
