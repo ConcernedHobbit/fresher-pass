@@ -4,13 +4,19 @@
 
 ## Events
 ### Core
-- [ ] Event can be added with a name
-- [ ] An event can be viewed
-- [ ] Events can be listed
 - [ ] Event can be deleted
 - [ ] Event can be updated
 - [ ] *(auth)* Event can only be created by Tutor+
 - [ ] *(auth)* Event can only be modified by same or higher role
+- [x] Event can be added with a name
+  - [x] From API
+  - [ ] From UI
+- [x] An event can be viewed
+  - [x] From API
+  - [x] From UI
+- [x] Events can be listed
+  - [x] From API
+  - [x] From UI
 ### Metadata
 - [ ] Event can have description
 - [ ] Event can have a time and date
